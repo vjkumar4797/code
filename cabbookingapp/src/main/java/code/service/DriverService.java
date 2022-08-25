@@ -49,5 +49,13 @@ public class DriverService {
 		}
 		return total;
 	}
+
+	public void updateDriverContactDetails(String driverName, Driver driver) {
+		drivers.get(driverName).setContactDetails(driver.getContactDetails());
+	}
+
+	public double getDriverEarnings(String driverName) {
+		return drivers.get(driverName).getEarnings();
+	}
 	
 }

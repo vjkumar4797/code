@@ -23,7 +23,7 @@ public class DriverClass {
 		ConfigurableApplicationContext appContext = SpringApplication.run(DriverClass.class, args);
 
 		UserService userService = appContext.getBean(UserService.class);
-		userService.addUser(new User("Abhishek", Gender.M , 23 ,new ContactDetails(901030405)));
+		userService.addUser(new User("Abhishek", Gender.M , 23 ,new ContactDetails(90103040590L)));
 		userService.addUser(new User("Rahul", Gender.M , 29));
 		userService.addUser(new User("Nandini", Gender.F , 22));
 		

@@ -7,7 +7,7 @@ import code.model.Driver;
 import code.model.User;
 
 @Service
-public class CalculateBill {
+public class BillingService {
 	
 	private double standardRate = 1.0;
 	
@@ -16,7 +16,7 @@ public class CalculateBill {
 	DriverService driverService;
 	
 	@Autowired
-	FindRide findDist;
+	RideService findDist;
 	
 	public double calculatebill(String userName , User user) {
 		Driver driver = driverService.getDriver(user.getDriverName()); 

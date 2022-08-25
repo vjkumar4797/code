@@ -8,7 +8,7 @@ import code.model.Coordinate;
 import code.model.Driver;
 
 @Service
-public class FindRide {
+public class RideService {
 	
 	
 	public List<Driver> findRides(Coordinate location , List<Driver> drivers){

@@ -13,6 +13,19 @@ public class Driver extends Person{
 	public Driver() {
 		super("", Gender.M, 100);
 	}
+	
+	
+
+	public Driver(String name, Gender gender, int age, ContactDetails contactDetails, Vehicle vehicle,
+			Coordinate location, boolean isAvailable, double earnings) {
+		super(name, gender, age, contactDetails);
+		this.vehicle = vehicle;
+		this.location = location;
+		this.isAvailable = isAvailable;
+		this.earnings = earnings;
+	}
+
+
 
 	public Driver(String name, Gender gender, int age, Vehicle vehicle, boolean isAvailable) {
 		super(name, gender, age);

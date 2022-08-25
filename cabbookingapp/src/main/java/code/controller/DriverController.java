@@ -35,13 +35,18 @@ public class DriverController {
 	}
 	
 	@RequestMapping(method=RequestMethod.PATCH, value="/drivers/{driverName}/status")
-	public void updateDriverContactDetails(@RequestBody Driver driver , @PathVariable String userName ) {
-		driverService.changeDriverStatus(userName, driver.isAvailable());
+	public void updateDriverStatus(@RequestBody Driver driver , @PathVariable String driverName ) {
+		driverService.changeDriverStatus(driverName, driver.isAvailable());
 	}
 	
 	@RequestMapping(method=RequestMethod.PATCH, value="/drivers/{driverName}/location")
-	public void updateDriverLocation(@RequestBody Driver driver , @PathVariable String userName) {
-		driverService.updateDriverLocation(userName, driver.getLocation());
+	public void updateDriverLocation(@RequestBody Driver driver , @PathVariable String driverName) {
+		driverService.updateDriverLocation(driverName, driver.getLocation());
+	}
+
+	@RequestMapping(method=RequestMethod.PATCH, value="/drivers/{driverName}/contactDetails")
+	public void updateDriverContactDetails(@RequestBody Driver driver , @PathVariable String driverName) {
+		driverService.updateDriverContactDetails(driverName , driver);
 	}
 	
 	@RequestMapping(value="/totalEarnings" , method=RequestMethod.GET)
@@ -51,7 +56,7 @@ public class DriverController {
 	
 	@RequestMapping(value="/totalEarnings/{driverName}" , method=RequestMethod.GET)
 	public String calculateFareByDriverName(@PathVariable String driverName){
-		return driverName + " earned : "+ driverService.getDriver(driverName).getEarnings();
+		return driverName + " earned : "+ driverService.getDriverEarnings(driverName);
 	}
 	
 }

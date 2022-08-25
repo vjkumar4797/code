@@ -19,10 +19,10 @@ public class UserService {
 	DriverService driverService;
 	
 	@Autowired
-	CalculateBill billService;
+	BillingService billService;
 	
 	@Autowired
-	FindRide findRide;
+	RideService findRide;
 
 	
 	private HashMap<String , User> users;
