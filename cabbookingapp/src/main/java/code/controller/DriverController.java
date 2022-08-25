@@ -47,6 +47,11 @@ public class DriverController {
 	@RequestMapping(value="/totalEarnings" , method=RequestMethod.GET)
 	public String calculateFare(){
 		return driverService.getTotalEarnings();
-	}	
+	}
+	
+	@RequestMapping(value="/totalEarnings/{driverName}" , method=RequestMethod.GET)
+	public String calculateFareByDriverName(@PathVariable String driverName){
+		return driverName + " earned : "+ driverService.getDriver(driverName).getEarnings();
+	}
 	
 }
